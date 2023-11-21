@@ -1,34 +1,26 @@
-import logo from './logo.svg';
-import React, {useState} from 'react';
-import './App.css';
-import ChangeNameColor from './changeNameColor';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './Navbar';
+import Home from './Home';
+import About from './About'; 
+import Project from './Project';
+import Contact from './Contact';
 
 function App() {
   return (
-    <div>
-        <nav>
-        <ul>
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="About.html">About</a></li>
-            <li><a href="Projects.html">Projects</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-        </ul>
-      </nav>    
-      <hr />
-
-      <h3>Hi, I'm</h3>
-      <ChangeNameColor />
-      <img src="portrait.png" className="Portrait" />
-
-      <div className="Socials">
-          <ul>
-              <li><a href="https://www.instagram.com/nathantamari_/" target="_blank"><img src="insta.png" className="SocialPngs" /></a></li>
-              <li><a href="https://www.linkedin.com/in/nathantamari/" target="_blank"><img src="linkedin.png" className="SocialPngs" /></a></li>
-              <li><a href="https://github.com/nathantamari" target="_blank"><img src="GitHub.png" className="SocialPngs" /></a></li>
-              <li><a href="https://www.youtube.com/@nathantamari" target="_blank"><img src="youtube.png" className="SocialPngs" /></a></li>
-          </ul>
+    <Router>
+      <div className='App'>
+        <Navbar />
+        <div className='content'>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/About' element={<About />} />
+            <Route path='/Project' element={<Project />} />
+            <Route path='/Contact' element={<Contact />} />
+          </Routes>
+        </div>
       </div>
-  </div>
+    </Router>
   );
 }
 

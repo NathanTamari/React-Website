@@ -11,7 +11,7 @@ const ChangeNameColor = () => {
 
     return (
         <button id="nameInBold" onClick={changeTitle}>
-            <h3 style={{ color: colorList[colorIndex]}}>Nathan</h3>
+            <h3 style={{color: colorList[colorIndex]}}>Nathan</h3>
         </button>
     );
 };
